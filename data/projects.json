@@ -1,0 +1,69 @@
+{
+  "data": [
+    {
+      "thumbnail": "../../assets/videos/resume-tailor.mp4",
+      "title": "Resume Tailor",
+      "link": "https://github.com/li-jiang-yan/advanced-linkedin-job-search-engine",
+      "text": "",
+      "skills": [
+        "Python",
+        "JavaScript",
+        "Flask",
+        "scikit-learn"
+      ],
+      "carousel": []
+    },
+    {
+      "thumbnail": "../../assets/videos/advanced-linkedin-job-search-engine.mp4",
+      "title": "LinkedIn Job Finder",
+      "link": "https://github.com/li-jiang-yan/advanced-linkedin-job-search-engine",
+      "text": "",
+      "skills": [
+        "Python",
+        "JavaScript",
+        "Flask",
+        "scikit-learn"
+      ],
+      "carousel": []
+    },
+    {
+      "thumbnail": "../../assets/images/linkedin-jd-word-token-analyzer_sklearn.png",
+      "title": "LinkedIn Job Description Word Token Analyzer",
+      "link": "https://github.com/li-jiang-yan/linkedin-jd-word-token-analyzer_sklearn",
+      "text": "",
+      "skills": [
+        "Python",
+        "JavaScript",
+        "Flask",
+        "scikit-learn"
+      ],
+      "carousel": []
+    },
+    {
+      "thumbnail": "../../assets/videos/credit-card-default-classification_various.mp4",
+      "title": "Credit Card Default Prediction Models",
+      "link": "https://github.com/li-jiang-yan/credit-card-default-classification_various",
+      "text": "",
+      "skills": [
+        "Python",
+        "JavaScript",
+        "scikit-learn",
+        "TensorFlow and Keras"
+      ],
+      "carousel": []
+    },
+    {
+      "thumbnail": "../../assets/images/digits-classification_ann-tensorflow-keras.jpeg",
+      "title": "Handwritten Digit Optical Recognition",
+      "link": "https://github.com/li-jiang-yan/digits-classification_ann-tensorflow-keras",
+      "text": "",
+      "skills": [
+        "Python",
+        "JavaScript",
+        "scikit-learn",
+        "TensorFlow and Keras"
+      ],
+      "carousel": []
+    }
+  ]
+}
