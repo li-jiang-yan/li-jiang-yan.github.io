@@ -4,7 +4,7 @@
       "thumbnail": "../../assets/videos/resume-tailor.mp4",
       "title": "Resume Tailor",
       "link": "https://github.com/li-jiang-yan/advanced-linkedin-job-search-engine",
-      "text": "",
+      "text": "A web app for job applicants to tailor their resumes to job description requirements",
       "skills": [
         "Python",
         "JavaScript",
@@ -17,7 +17,7 @@
       "thumbnail": "../../assets/videos/advanced-linkedin-job-search-engine.mp4",
       "title": "LinkedIn Job Finder",
       "link": "https://github.com/li-jiang-yan/advanced-linkedin-job-search-engine",
-      "text": "",
+      "text": "A web app for job seekers to find jobs that match their skills and interests",
       "skills": [
         "Python",
         "JavaScript",
@@ -30,7 +30,7 @@
       "thumbnail": "../../assets/images/linkedin-jd-word-token-analyzer_sklearn.png",
       "title": "LinkedIn Job Description Word Token Analyzer",
       "link": "https://github.com/li-jiang-yan/linkedin-jd-word-token-analyzer_sklearn",
-      "text": "",
+      "text": "A web app for job researchers to analyze the frequency of word tokens used in job posts",
       "skills": [
         "Python",
         "JavaScript",
@@ -43,7 +43,7 @@
       "thumbnail": "../../assets/videos/credit-card-default-classification_various.mp4",
       "title": "Credit Card Default Prediction Models",
       "link": "https://github.com/li-jiang-yan/credit-card-default-classification_various",
-      "text": "",
+      "text": "Several ML classification models to predict credit card defaults, trained using real-world data",
       "skills": [
         "Python",
         "JavaScript",
@@ -56,7 +56,7 @@
       "thumbnail": "../../assets/images/digits-classification_ann-tensorflow-keras.jpeg",
       "title": "Handwritten Digit Optical Recognition",
       "link": "https://github.com/li-jiang-yan/digits-classification_ann-tensorflow-keras",
-      "text": "",
+      "text": "A neural network model trained to recognize handwritten digits, deployed on GitHub pages (click the View button)",
       "skills": [
         "Python",
         "JavaScript",
