@@ -43,3 +43,20 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+.carousel {
+  display: flex;
+  align-items: center;
+  flex: 1
+}
+
+.carousel-inner {
+  flex: 1
+}
+
+.carousel .carousel-control-prev,
+.carousel .carousel-control-next {
+  position: static; /* Remove absolute positioning */
+  width: 5%;        /* Adjust width as needed */
+  filter: invert(1); /* Optional: make icons visible if background is light */
+}

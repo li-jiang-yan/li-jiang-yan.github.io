@@ -18,15 +18,12 @@ export function ProjectCol(object) {
   );
 
   // Collapse/Carousel
-  if (true) {
-  // if (object.carousel.length !== 0) {
+  if (object.carousel.length !== 0) {
     const collapseId = crypto.randomUUID();
     btnGroup.appendChild(ViewButton(collapseId));
 
     const carouselId = crypto.randomUUID();
-    const carouselItems = [
-      CarouselItem(BlankThumbnail()), CarouselItem(BlankThumbnail()), CarouselItem(BlankThumbnail())
-    ];
+    const carouselItems = object.carousel.map(html => CarouselItem(html));
     carouselItems[0].classList.add('active');
     result.appendChild(
       Collapse(
@@ -34,8 +31,8 @@ export function ProjectCol(object) {
         CollapseCard(
           Carousel(
             carouselId,
-            CarouselInner(...carouselItems),
             CarouselControl('prev', carouselId),
+            CarouselInner(...carouselItems),
             CarouselControl('next', carouselId)
           )
         )
@@ -222,10 +219,8 @@ function CarouselInner(...children) {
 }
 
 
-function CarouselItem(...children) {
-  const result = render('<div class="carousel-item"></div>');
-  result.replaceChildren(...children);
-  return result;
+function CarouselItem(innerHTML) {
+  return render(`<div class="carousel-item">${innerHTML}</div>`);
 }
 
 
