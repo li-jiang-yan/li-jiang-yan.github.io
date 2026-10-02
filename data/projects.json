@@ -37,7 +37,37 @@
         "Flask",
         "scikit-learn"
       ],
-      "carousel": []
+      "carousel": [
+        {
+          "tag": "div",
+          "children": [
+            {
+              "tag": "div",
+              "children": [
+                {
+                  "tag": "h5",
+                  "children": [
+                    "Problem Statement"
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "children": [
+                    "How to objectively find out what are the most in-demand skills for a particular career/industry?"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "img",
+              "attrs": {
+                "src": "../assets/images/linkedin-jd-word-token-analyzer_sklearn.png",
+                "class": "img-fluid"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "thumbnail": "../../assets/videos/credit-card-default-classification_various.mp4",
