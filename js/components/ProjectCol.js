@@ -213,7 +213,7 @@ function Carousel(id, ...children) {
 
 
 function CarouselInner(...children) {
-  const result = render('<div class="carousel-inner"></div>');
+  const result = render('<div class="carousel-inner" style="min-height: 500px;"></div>');
   result.replaceChildren(...children);
   return result;
 }

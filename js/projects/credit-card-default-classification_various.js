@@ -198,5 +198,11 @@ class IllustrationChart {
     }
 }
 
-new ModelChart('credit-default-prediction-canvas-models-id', 'credit-default-prediction-select-id');
-new IllustrationChart('credit-default-prediction-canvas-charts-id', 'credit-default-prediction-input-id');
+new ModelChart(
+    'credit-card-default-classification_various-metrics',
+    'credit-card-default-classification_various-select'
+);
+new IllustrationChart(
+    'credit-card-default-classification_various-models',
+    'credit-card-default-classification_various-status'
+);

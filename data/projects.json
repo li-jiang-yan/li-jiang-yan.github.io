@@ -299,7 +299,202 @@
         "scikit-learn",
         "TensorFlow and Keras"
       ],
-      "carousel": []
+      "carousel": [
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "mb-3"
+          },
+          "children": [
+            {
+              "tag": "h5",
+              "children": [
+                "Visualizable Models"
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "input-group mb-3"
+              },
+              "children": [
+                {
+                  "tag": "label",
+                  "attrs": {
+                    "class": "input-group-text",
+                    "for": "credit-card-default-classification_various-status"
+                  },
+                  "children": [
+                    "Repayment status 2 months ago:"
+                  ]
+                },
+                {
+                  "tag": "input",
+                  "attrs": {
+                    "class": "form-control",
+                    "id": "credit-card-default-classification_various-status",
+                    "type": "number",
+                    "min": "-2",
+                    "max": "8",
+                    "value": "-2"
+                  }
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "style": "background-color: white;",
+                "class": "p-3"
+              },
+              "children": [
+                {
+                  "tag": "canvas",
+                  "attrs": {
+                    "id": "credit-card-default-classification_various-models"
+                  }
+                }
+              ]
+            },
+            {
+              "tag": "script",
+              "attrs": {
+                "type": "module",
+                "src": "../js/projects/credit-card-default-classification_various.js"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "children": [
+            {
+              "tag": "h5",
+              "children": [
+                "Model Metrics"
+              ]
+            },
+            {
+              "tag": "p",
+              "children": [
+                "Training data source: ",
+                {
+                  "tag": "a",
+                  "attrs": {
+                    "href": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients"
+                  },
+                  "children": [
+                    "Default of Credit Card Clients"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "mb-3"
+              },
+              "children": [
+                {
+                  "tag": "select",
+                  "attrs": {
+                    "id": "credit-card-default-classification_various-select",
+                    "class": "form-select input-group mb-3"
+                  },
+                  "children": [
+                    {
+                      "tag": "option",
+                      "children": [
+                        "Accuracy"
+                      ]
+                    },
+                    {
+                      "tag": "option",
+                      "children": [
+                        "Precision"
+                      ]
+                    },
+                    {
+                      "tag": "option",
+                      "children": [
+                        "Recall"
+                      ]
+                    },
+                    {
+                      "tag": "option",
+                      "children": [
+                        "F1-score"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "attrs": {
+                    "style": "background-color: white;",
+                    "class": "p-3 mb-3"
+                  },
+                  "children": [
+                    {
+                      "tag": "canvas",
+                      "attrs": {
+                        "id": "credit-card-default-classification_various-metrics"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "attrs": {
+                    "class": "small mb-0"
+                  },
+                  "children": [
+                    "Notes:"
+                  ]
+                },
+                {
+                  "tag": "ul",
+                  "attrs": {
+                    "class": "small mb-0"
+                  },
+                  "children": [
+                    {
+                      "tag": "li",
+                      "children": [
+                        "LR: logistic regression"
+                      ]
+                    },
+                    {
+                      "tag": "li",
+                      "children": [
+                        "RF-1F: random forest (1 variable)"
+                      ]
+                    },
+                    {
+                      "tag": "li",
+                      "children": [
+                        "RF-MF: random forest (multiple variables)"
+                      ]
+                    },
+                    {
+                      "tag": "li",
+                      "children": [
+                        "ANN-1F: artificial neural network (1 variable)"
+                      ]
+                    },
+                    {
+                      "tag": "li",
+                      "children": [
+                        "ANN-MF: artificial neural network (multiple variables)"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "thumbnail": "../../assets/images/digits-classification_ann-tensorflow-keras.jpeg",
