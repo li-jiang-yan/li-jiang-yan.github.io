@@ -24,7 +24,44 @@
         "Flask",
         "scikit-learn"
       ],
-      "carousel": []
+      "carousel": [
+        {
+          "tag": "div",
+          "children": [
+            {
+              "tag": "div",
+              "children": [
+                {
+                  "tag": "h5",
+                  "children": [
+                    "Problem Statement"
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "children": [
+                    "How might we save time and energy finding jobs that match our current skills and aspirations?"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "ratio ratio-16x9"
+              },
+              "children": [
+                {
+                  "tag": "iframe",
+                  "attrs": {
+                    "src": "../assets/videos/advanced-linkedin-job-search-engine.mp4"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "thumbnail": "../../assets/images/linkedin-jd-word-token-analyzer_sklearn.png",
