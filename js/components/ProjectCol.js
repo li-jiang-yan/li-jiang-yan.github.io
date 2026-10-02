@@ -23,7 +23,7 @@ export function ProjectCol(object) {
     btnGroup.appendChild(ViewButton(collapseId));
 
     const carouselId = crypto.randomUUID();
-    const carouselItems = object.carousel.map(html => CarouselItem(html));
+    const carouselItems = object.carousel.map(object => CarouselItem(object));
     carouselItems[0].classList.add('active');
     result.appendChild(
       Collapse(
@@ -219,9 +219,40 @@ function CarouselInner(...children) {
 }
 
 
-function CarouselItem(innerHTML) {
-  return render(`<div class="carousel-item">${innerHTML}</div>`);
+function CarouselItem(object) {
+  const result = render('<div class="carousel-item"></div>');
+  result.replaceChildren(renderObject(object));
+  return result;
 }
+
+
+function renderObject(object) {
+  const result = document.createElement(object.tag);
+  if (Object.hasOwn(object, "attrs")) {
+    Object.entries(object.attrs).forEach(
+      ([key, value]) => {
+        result.setAttribute(key, value);
+      }
+    );
+  }
+  if (Object.hasOwn(object, "children")) {
+    result.replaceChildren(
+      ...object.children.map(
+        (child) => {
+          if (isObject(child)) {
+            return renderObject(child);
+          } else {
+            return child;
+          }
+        }
+      )
+    );
+  }
+  return result;
+}
+
+
+const isObject = value => typeof value === 'object' && value !== null && !Array.isArray(value);
 
 
 function CarouselControl(slide, carouselId) {

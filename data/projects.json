@@ -63,7 +63,216 @@
         "scikit-learn",
         "TensorFlow and Keras"
       ],
-      "carousel": []
+      "carousel": [
+        {
+          "tag": "div",
+          "children": [
+            {
+              "tag": "h5",
+              "children": [
+                "Model"
+              ]
+            },
+            {
+              "tag": "p",
+              "children": [
+                "Training data source: ",
+                {
+                  "tag": "a",
+                  "attrs": {
+                    "href": "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits"
+                  },
+                  "children": [
+                    "Optical Recognition of Handwritten Digits"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "table",
+              "attrs": {
+                "class": "table table-bordered"
+              },
+              "children": [
+                {
+                  "tag": "thead",
+                  "children": [
+                    {
+                      "tag": "tr",
+                      "children": [
+                        {
+                          "tag": "th",
+                          "attrs": {
+                            "style": "width: 50%"
+                          },
+                          "children": [
+                            "Drawing Board"
+                          ]
+                        },
+                        {
+                          "tag": "th",
+                          "attrs": {
+                            "style": "width: 50%"
+                          },
+                          "children": [
+                            "Prediction"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tbody",
+                  "children": [
+                    {
+                      "tag": "tr",
+                      "children": [
+                        {
+                          "tag": "td",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "attrs": {
+                                "class": "mb-3"
+                              },
+                              "children": [
+                                "Draw in the black box (yes, really!)"
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "attrs": {
+                                "class": "mb-3"
+                              },
+                              "children": [
+                                {
+                                  "tag": "canvas",
+                                  "attrs": {
+                                    "id": "digits-classification_ann-tensorflow-keras-canvas",
+                                    "width": "128",
+                                    "height": "128",
+                                    "style": "touch-action: none;"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "attrs": {
+                                "class": "mb-3"
+                              },
+                              "children": [
+                                {
+                                  "tag": "button",
+                                  "attrs": {
+                                    "id": "digits-classification_ann-tensorflow-keras-button",
+                                    "type": "button",
+                                    "class": "btn btn-secondary"
+                                  },
+                                  "children": [
+                                    "Clear"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "td",
+                          "children": [
+                            {
+                              "tag": "table",
+                              "attrs": {
+                                "class": "table table-bordered",
+                                "id": "digits-classification_ann-tensorflow-keras-table"
+                              },
+                              "children": [
+                                {
+                                  "tag": "thead",
+                                  "children": [
+                                    {
+                                      "tag": "tr",
+                                      "children": [
+                                        {
+                                          "tag": "th",
+                                          "attrs": {
+                                            "style": "width: 50%"
+                                          },
+                                          "children": [
+                                            "Digit"
+                                          ]
+                                        },
+                                        {
+                                          "tag": "th",
+                                          "attrs": {
+                                            "style": "width: 50%"
+                                          },
+                                          "children": [
+                                            "Probability"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "tbody"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "attrs": {
+                                "class": "input-group mb-1"
+                              },
+                              "children": [
+                                {
+                                  "tag": "label",
+                                  "attrs": {
+                                    "class": "input-group-text",
+                                    "for": "digits-classification_ann-tensorflow-keras-prediction"
+                                  },
+                                  "children": [
+                                    "Prediction"
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "attrs": {
+                                    "class": "form-control",
+                                    "id": "digits-classification_ann-tensorflow-keras-prediction"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "attrs": {
+                                "class": "small text-center mb-0"
+                              },
+                              "children": [
+                                "The model may make mistakes."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "script",
+              "attrs": {
+                "type": "module",
+                "src": "../js/projects/digits-classification_ann-tensorflow-keras.js"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
