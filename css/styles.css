@@ -1,0 +1,69 @@
+.btn-skill {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #6c757d;
+  --bs-btn-border-color: #6c757d;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0b5ed7;
+  --bs-btn-hover-border-color: #0a58ca;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0d6efd;
+  --bs-btn-active-border-color: #0d6efd;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #6c757d;
+  --bs-btn-disabled-border-color: #6c757d
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-flow: row dense;
+  gap: 1rem;
+  align-items: start;
+}
+
+#projects > .col {
+  min-width: 0;
+}
+
+#projects > .project-collapse {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+@media (min-width: 576px) {
+  #projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  #projects {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  flex: 1
+}
+
+.carousel-inner {
+  flex: 1
+}
+
+.carousel .carousel-control-prev,
+.carousel .carousel-control-next {
+  position: static; /* Remove absolute positioning */
+  width: 5%;        /* Adjust width as needed */
+}
+
+[data-bs-theme="light"] {
+  --bs-carousel-control-icon-filter: invert(1);
+}
+
+[data-bs-theme="dark"] {
+  --bs-carousel-control-icon-filter: none;
+}
