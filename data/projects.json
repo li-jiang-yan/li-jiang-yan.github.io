@@ -271,6 +271,32 @@
               }
             }
           ]
+        },
+        {
+          "tag": "div",
+          "children": [
+            {
+              "tag": "h5",
+              "children": [
+                "Determining a suitable learning rate"
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "style": "background-color: white;",
+                "class": "p-3"
+              },
+              "children": [
+                {
+                  "tag": "canvas",
+                  "attrs": {
+                    "id": "digits-classification_ann-tensorflow-keras-graph"
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
