@@ -11,7 +11,189 @@
         "Flask",
         "scikit-learn"
       ],
-      "carousel": []
+      "carousel": [
+        {
+          "tag": "div",
+          "children": [
+            {
+              "tag": "div",
+              "children": [
+                {
+                  "tag": "h5",
+                  "children": [
+                    "Problem Statement"
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "children": [
+                    "How might we save time and energy tailoring resumes that match job description requirements?"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "ratio ratio-16x9"
+              },
+              "children": [
+                {
+                  "tag": "iframe",
+                  "attrs": {
+                    "src": "../assets/videos/resume-tailor.mp4"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "children": [
+            {
+              "tag": "div",
+              "children": [
+                {
+                  "tag": "h5",
+                  "children": [
+                    "Job Description Analyzer"
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "children": [
+                    "Identifies the top 10 most common words/phrases that might reflect the job poster's core priorities."
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "img",
+              "attrs": {
+                "src": "../assets/images/resume-tailor-01.png",
+                "class": "img-fluid"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "children": [
+            {
+              "tag": "div",
+              "children": [
+                {
+                  "tag": "h5",
+                  "children": [
+                    "Job Description-Resume Summary Similarity Measure"
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "children": [
+                    "Measures the similarity between the job description and resume summary to write summaries that align closer with job description requirements."
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "img",
+              "attrs": {
+                "src": "../assets/images/resume-tailor-02.png",
+                "class": "img-fluid"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "children": [
+            {
+              "tag": "div",
+              "children": [
+                {
+                  "tag": "h5",
+                  "children": [
+                    "Bulletpoint Relevance Measure"
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "children": [
+                    "Shows the similarity between bulletpoints and the job description to identity points to prioritize through inclusion/reorganization."
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "img",
+              "attrs": {
+                "src": "../assets/images/resume-tailor-03.png",
+                "class": "img-fluid"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "children": [
+            {
+              "tag": "div",
+              "children": [
+                {
+                  "tag": "h5",
+                  "children": [
+                    "Skill Count Measure"
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "children": [
+                    "Counts the occurrence of master resume skills mentioned by the job poster to identity skills to prioritize through inclusion/reorganization."
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "img",
+              "attrs": {
+                "src": "../assets/images/resume-tailor-04.png",
+                "class": "img-fluid"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "children": [
+            {
+              "tag": "div",
+              "children": [
+                {
+                  "tag": "h5",
+                  "children": [
+                    "Word Export"
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "children": [
+                    "Exports fully formatted resume edited through the tool, giving users the flexibility to make further edits in a Word processor if needed."
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "img",
+              "attrs": {
+                "src": "../assets/images/resume-tailor-05.png",
+                "class": "img-fluid"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "thumbnail": "../../assets/videos/advanced-linkedin-job-search-engine.mp4",
