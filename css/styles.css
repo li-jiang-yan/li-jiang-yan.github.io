@@ -58,5 +58,12 @@
 .carousel .carousel-control-next {
   position: static; /* Remove absolute positioning */
   width: 5%;        /* Adjust width as needed */
-  filter: invert(1); /* Optional: make icons visible if background is light */
+}
+
+[data-bs-theme="light"] {
+  --bs-carousel-control-icon-filter: invert(1);
+}
+
+[data-bs-theme="dark"] {
+  --bs-carousel-control-icon-filter: none;
 }
