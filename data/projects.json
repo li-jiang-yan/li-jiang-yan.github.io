@@ -1,6 +1,53 @@
 {
   "data": [
     {
+      "thumbnail": "../../assets/videos/github-issue-importer.mp4",
+      "title": "GitHub Issue Importer",
+      "link": "https://github.com/li-jiang-yan/github-issue-importer",
+      "text": "A web app to import GitHub issues from a CSV to a given repository",
+      "skills": [
+        "JavaScript"
+      ],
+      "carousel": [
+        {
+          "tag": "div",
+          "children": [
+            {
+              "tag": "div",
+              "children": [
+                {
+                  "tag": "h5",
+                  "children": [
+                    "Problem Statement"
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "children": [
+                    "How might we save time and energy creating issues on GitHub repositories?"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "ratio ratio-16x9"
+              },
+              "children": [
+                {
+                  "tag": "iframe",
+                  "attrs": {
+                    "src": "../assets/videos/github-issue-importer.mp4"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "thumbnail": "../../assets/videos/resume-tailor.mp4",
       "title": "Resume Tailor",
       "link": "https://github.com/li-jiang-yan/advanced-linkedin-job-search-engine",
