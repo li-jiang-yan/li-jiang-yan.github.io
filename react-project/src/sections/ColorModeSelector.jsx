@@ -1,4 +1,45 @@
+import './ColorModeSelector.css';
+import { useEffect, useState } from 'react';
+import Dropdown from 'react-bootstrap/Dropdown';
+
+const getStoredTheme = () => localStorage.getItem('theme');
+const setStoredTheme = (theme) => localStorage.setItem('theme', theme);
+
+const getPreferredTheme = () => {
+  const storedTheme = getStoredTheme();
+  if (storedTheme) {
+    return storedTheme;
+  }
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
+};
+
 function ColorModeSelector() {
+  const [theme, setTheme] = useState(getPreferredTheme());
+  const themeOptions = [
+    { name: 'light', href: '#sun-fill' },
+    { name: 'dark', href: '#moon-stars-fill' },
+    { name: 'auto', href: '#circle-half' },
+  ];
+
+  useEffect(() => {
+    setStoredTheme(theme);
+
+    // color-modes.js setTheme
+    if (theme === 'auto') {
+      document.documentElement.setAttribute(
+        'data-bs-theme',
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light',
+      );
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+  }, [theme]);
+
   return (
     <>
       <svg xmlns='http://www.w3.org/2000/svg' className='d-none'>
@@ -16,9 +57,10 @@ function ColorModeSelector() {
           <path d='M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z'></path>
         </symbol>
       </svg>
-      <div className='dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle'>
-        <button
-          className='btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center'
+      <Dropdown className='position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle'>
+        <Dropdown.Toggle
+          variant='bd-primary'
+          className='py-2 d-flex align-items-center'
           id='bd-theme'
           type='button'
           aria-expanded='false'
@@ -26,66 +68,47 @@ function ColorModeSelector() {
           aria-label='Toggle theme (auto)'
         >
           <svg className='bi my-1 theme-icon-active' aria-hidden='true'>
-            <use href='#circle-half'></use>
+            <use
+              href={
+                themeOptions.find((themeOption) => themeOption.name === theme)
+                  .href
+              }
+            ></use>
           </svg>
           <span className='visually-hidden' id='bd-theme-text'>
             Toggle theme
           </span>
-        </button>
-        <ul
-          className='dropdown-menu dropdown-menu-end shadow'
+        </Dropdown.Toggle>
+        <Dropdown.Menu
+          as='ul'
+          className='dropdown-menu-end shadow'
           aria-labelledby='bd-theme-text'
         >
-          <li>
-            <button
-              type='button'
-              className='dropdown-item d-flex align-items-center'
-              data-bs-theme-value='light'
-              aria-pressed='false'
-            >
-              <svg className='bi me-2 opacity-50' aria-hidden='true'>
-                <use href='#sun-fill'></use>
-              </svg>
-              Light
-              <svg className='bi ms-auto d-none' aria-hidden='true'>
-                <use href='#check2'></use>
-              </svg>
-            </button>
-          </li>
-          <li>
-            <button
-              type='button'
-              className='dropdown-item d-flex align-items-center'
-              data-bs-theme-value='dark'
-              aria-pressed='false'
-            >
-              <svg className='bi me-2 opacity-50' aria-hidden='true'>
-                <use href='#moon-stars-fill'></use>
-              </svg>
-              Dark
-              <svg className='bi ms-auto d-none' aria-hidden='true'>
-                <use href='#check2'></use>
-              </svg>
-            </button>
-          </li>
-          <li>
-            <button
-              type='button'
-              className='dropdown-item d-flex align-items-center active'
-              data-bs-theme-value='auto'
-              aria-pressed='true'
-            >
-              <svg className='bi me-2 opacity-50' aria-hidden='true'>
-                <use href='#circle-half'></use>
-              </svg>
-              Auto
-              <svg className='bi ms-auto d-none' aria-hidden='true'>
-                <use href='#check2'></use>
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </div>
+          {themeOptions.map((themeOption) => (
+            <li key={themeOption.name}>
+              <Dropdown.Item
+                as='button'
+                className={
+                  'd-flex align-items-center' +
+                  (theme === themeOption.name ? ' active' : '')
+                }
+                data-bs-theme-value={themeOption.name}
+                aria-pressed={theme === themeOption.name}
+                onClick={() => setTheme(themeOption.name)}
+              >
+                <svg className='bi me-2 opacity-50' aria-hidden='true'>
+                  <use href={themeOption.href}></use>
+                </svg>
+                {themeOption.name.charAt(0).toUpperCase() +
+                  themeOption.name.slice(1)}
+                <svg className='bi ms-auto d-none' aria-hidden='true'>
+                  <use href='#check2'></use>
+                </svg>
+              </Dropdown.Item>
+            </li>
+          ))}
+        </Dropdown.Menu>
+      </Dropdown>
     </>
   );
 }
