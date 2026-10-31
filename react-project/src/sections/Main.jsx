@@ -1,4 +1,22 @@
+import { useState } from 'react';
+import ToggleButton from 'react-bootstrap/ToggleButton';
+
+function convertToId(skill) {
+  return `toggle-${skill.toLowerCase().replaceAll(' ', '-')}`;
+}
+
 function Main() {
+  const skills = [
+    'Python',
+    'JavaScript',
+    'Flask',
+    'scikit-learn',
+    'TensorFlow and Keras',
+  ];
+  const [toggles, setToggles] = useState(
+    Object.fromEntries(skills.map((skill) => [skill, true])),
+  );
+
   return (
     <main>
       <section className='py-5 text-center container'>
@@ -12,46 +30,24 @@ function Main() {
               and hands-on projects.
             </p>
             <p>
-              <button
-                type='button'
-                className='btn btn-skill active my-2'
-                data-bs-toggle='button'
-                aria-pressed='true'
-              >
-                Python
-              </button>
-              <button
-                type='button'
-                className='btn btn-skill active my-2'
-                data-bs-toggle='button'
-                aria-pressed='true'
-              >
-                JavaScript
-              </button>
-              <button
-                type='button'
-                className='btn btn-skill active my-2'
-                data-bs-toggle='button'
-                aria-pressed='true'
-              >
-                Flask
-              </button>
-              <button
-                type='button'
-                className='btn btn-skill active my-2'
-                data-bs-toggle='button'
-                aria-pressed='true'
-              >
-                scikit-learn
-              </button>
-              <button
-                type='button'
-                className='btn btn-skill active my-2'
-                data-bs-toggle='button'
-                aria-pressed='true'
-              >
-                TensorFlow and Keras
-              </button>
+              {skills.map((skill) => (
+                <ToggleButton
+                  key={skill}
+                  id={convertToId(skill)}
+                  type='checkbox'
+                  value={skill}
+                  checked={toggles[skill]}
+                  onChange={(e) =>
+                    setToggles({ ...toggles, [skill]: e.currentTarget.checked })
+                  }
+                  className='my-2 btn-skill'
+                  style={{
+                    marginInline: '0.125rem',
+                  }}
+                >
+                  {skill}
+                </ToggleButton>
+              ))}
               <br />
               <button type='button' className='btn btn-skill my-2' disabled>
                 And more underway...
