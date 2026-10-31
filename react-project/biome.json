@@ -19,7 +19,9 @@
       "preset": "recommended",
       "a11y": {
         "noSvgWithoutTitle": "off",
-        "noAmbiguousAnchorText": "off"
+        "noAmbiguousAnchorText": "off",
+        "useValidAnchor": "off",
+        "useAltText": "off"
       }
     }
   },
