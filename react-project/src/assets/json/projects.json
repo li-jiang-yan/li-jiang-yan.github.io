@@ -5,9 +5,7 @@
       "title": "GitHub Issue Importer",
       "link": "https://github.com/li-jiang-yan/github-issue-importer",
       "text": "A web app to import GitHub issues from a CSV to a given repository",
-      "skills": [
-        "JavaScript"
-      ],
+      "skills": ["JavaScript"],
       "carousel": [
         {
           "tag": "div",
@@ -17,9 +15,7 @@
               "children": [
                 {
                   "tag": "h5",
-                  "children": [
-                    "Problem Statement"
-                  ]
+                  "children": ["Problem Statement"]
                 },
                 {
                   "tag": "p",
@@ -52,12 +48,7 @@
       "title": "Resume Tailor",
       "link": "https://github.com/li-jiang-yan/advanced-linkedin-job-search-engine",
       "text": "A web app for job applicants to tailor their resumes to job description requirements",
-      "skills": [
-        "Python",
-        "JavaScript",
-        "Flask",
-        "scikit-learn"
-      ],
+      "skills": ["Python", "JavaScript", "Flask", "scikit-learn"],
       "carousel": [
         {
           "tag": "div",
@@ -67,9 +58,7 @@
               "children": [
                 {
                   "tag": "h5",
-                  "children": [
-                    "Problem Statement"
-                  ]
+                  "children": ["Problem Statement"]
                 },
                 {
                   "tag": "p",
@@ -103,9 +92,7 @@
               "children": [
                 {
                   "tag": "h5",
-                  "children": [
-                    "Job Description Analyzer"
-                  ]
+                  "children": ["Job Description Analyzer"]
                 },
                 {
                   "tag": "p",
@@ -161,9 +148,7 @@
               "children": [
                 {
                   "tag": "h5",
-                  "children": [
-                    "Bulletpoint Relevance Measure"
-                  ]
+                  "children": ["Bulletpoint Relevance Measure"]
                 },
                 {
                   "tag": "p",
@@ -190,9 +175,7 @@
               "children": [
                 {
                   "tag": "h5",
-                  "children": [
-                    "Skill Count Measure"
-                  ]
+                  "children": ["Skill Count Measure"]
                 },
                 {
                   "tag": "p",
@@ -219,9 +202,7 @@
               "children": [
                 {
                   "tag": "h5",
-                  "children": [
-                    "Word Export"
-                  ]
+                  "children": ["Word Export"]
                 },
                 {
                   "tag": "p",
@@ -247,12 +228,7 @@
       "title": "LinkedIn Job Finder",
       "link": "https://github.com/li-jiang-yan/advanced-linkedin-job-search-engine",
       "text": "A web app for job seekers to find jobs that match their skills and interests",
-      "skills": [
-        "Python",
-        "JavaScript",
-        "Flask",
-        "scikit-learn"
-      ],
+      "skills": ["Python", "JavaScript", "Flask", "scikit-learn"],
       "carousel": [
         {
           "tag": "div",
@@ -262,9 +238,7 @@
               "children": [
                 {
                   "tag": "h5",
-                  "children": [
-                    "Problem Statement"
-                  ]
+                  "children": ["Problem Statement"]
                 },
                 {
                   "tag": "p",
@@ -297,12 +271,7 @@
       "title": "LinkedIn Job Description Word Token Analyzer",
       "link": "https://github.com/li-jiang-yan/linkedin-jd-word-token-analyzer_sklearn",
       "text": "A web app for job researchers to analyze the frequency of word tokens used in job posts",
-      "skills": [
-        "Python",
-        "JavaScript",
-        "Flask",
-        "scikit-learn"
-      ],
+      "skills": ["Python", "JavaScript", "Flask", "scikit-learn"],
       "carousel": [
         {
           "tag": "div",
@@ -312,9 +281,7 @@
               "children": [
                 {
                   "tag": "h5",
-                  "children": [
-                    "Problem Statement"
-                  ]
+                  "children": ["Problem Statement"]
                 },
                 {
                   "tag": "p",
@@ -355,9 +322,7 @@
           "children": [
             {
               "tag": "h5",
-              "children": [
-                "Visualizable Models"
-              ]
+              "children": ["Visualizable Models"]
             },
             {
               "tag": "div",
@@ -371,9 +336,7 @@
                     "class": "input-group-text",
                     "for": "credit-card-default-classification_various-status"
                   },
-                  "children": [
-                    "Repayment status 2 months ago:"
-                  ]
+                  "children": ["Repayment status 2 months ago:"]
                 },
                 {
                   "tag": "input",
@@ -417,9 +380,7 @@
           "children": [
             {
               "tag": "h5",
-              "children": [
-                "Model Metrics"
-              ]
+              "children": ["Model Metrics"]
             },
             {
               "tag": "p",
@@ -430,9 +391,7 @@
                   "attrs": {
                     "href": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients"
                   },
-                  "children": [
-                    "Default of Credit Card Clients"
-                  ]
+                  "children": ["Default of Credit Card Clients"]
                 }
               ]
             },
@@ -451,27 +410,19 @@
                   "children": [
                     {
                       "tag": "option",
-                      "children": [
-                        "Accuracy"
-                      ]
+                      "children": ["Accuracy"]
                     },
                     {
                       "tag": "option",
-                      "children": [
-                        "Precision"
-                      ]
+                      "children": ["Precision"]
                     },
                     {
                       "tag": "option",
-                      "children": [
-                        "Recall"
-                      ]
+                      "children": ["Recall"]
                     },
                     {
                       "tag": "option",
-                      "children": [
-                        "F1-score"
-                      ]
+                      "children": ["F1-score"]
                     }
                   ]
                 },
@@ -495,9 +446,7 @@
                   "attrs": {
                     "class": "small mb-0"
                   },
-                  "children": [
-                    "Notes:"
-                  ]
+                  "children": ["Notes:"]
                 },
                 {
                   "tag": "ul",
@@ -507,21 +456,15 @@
                   "children": [
                     {
                       "tag": "li",
-                      "children": [
-                        "LR: logistic regression"
-                      ]
+                      "children": ["LR: logistic regression"]
                     },
                     {
                       "tag": "li",
-                      "children": [
-                        "RF-1F: random forest (1 variable)"
-                      ]
+                      "children": ["RF-1F: random forest (1 variable)"]
                     },
                     {
                       "tag": "li",
-                      "children": [
-                        "RF-MF: random forest (multiple variables)"
-                      ]
+                      "children": ["RF-MF: random forest (multiple variables)"]
                     },
                     {
                       "tag": "li",
@@ -560,9 +503,7 @@
           "children": [
             {
               "tag": "h5",
-              "children": [
-                "Model"
-              ]
+              "children": ["Model"]
             },
             {
               "tag": "p",
@@ -573,9 +514,7 @@
                   "attrs": {
                     "href": "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits"
                   },
-                  "children": [
-                    "Optical Recognition of Handwritten Digits"
-                  ]
+                  "children": ["Optical Recognition of Handwritten Digits"]
                 }
               ]
             },
@@ -596,18 +535,14 @@
                           "attrs": {
                             "style": "width: 50%"
                           },
-                          "children": [
-                            "Drawing Board"
-                          ]
+                          "children": ["Drawing Board"]
                         },
                         {
                           "tag": "th",
                           "attrs": {
                             "style": "width: 50%"
                           },
-                          "children": [
-                            "Prediction"
-                          ]
+                          "children": ["Prediction"]
                         }
                       ]
                     }
@@ -661,9 +596,7 @@
                                     "type": "button",
                                     "class": "btn btn-secondary"
                                   },
-                                  "children": [
-                                    "Clear"
-                                  ]
+                                  "children": ["Clear"]
                                 }
                               ]
                             }
@@ -690,18 +623,14 @@
                                           "attrs": {
                                             "style": "width: 50%"
                                           },
-                                          "children": [
-                                            "Digit"
-                                          ]
+                                          "children": ["Digit"]
                                         },
                                         {
                                           "tag": "th",
                                           "attrs": {
                                             "style": "width: 50%"
                                           },
-                                          "children": [
-                                            "Probability"
-                                          ]
+                                          "children": ["Probability"]
                                         }
                                       ]
                                     }
@@ -724,9 +653,7 @@
                                     "class": "input-group-text",
                                     "for": "digits-classification_ann-tensorflow-keras-prediction"
                                   },
-                                  "children": [
-                                    "Prediction"
-                                  ]
+                                  "children": ["Prediction"]
                                 },
                                 {
                                   "tag": "div",
@@ -742,9 +669,7 @@
                               "attrs": {
                                 "class": "small text-center mb-0"
                               },
-                              "children": [
-                                "The model may make mistakes."
-                              ]
+                              "children": ["The model may make mistakes."]
                             }
                           ]
                         }
@@ -768,9 +693,7 @@
           "children": [
             {
               "tag": "h5",
-              "children": [
-                "Determining a suitable learning rate"
-              ]
+              "children": ["Determining a suitable learning rate"]
             },
             {
               "tag": "div",
