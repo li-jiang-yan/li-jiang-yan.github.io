@@ -29,7 +29,7 @@ function Header() {
                     </a>
                   </li>
                   <li>
-                    Email me at <img src='/assets/images/email.png' />
+                    Email me at <img src='/src/assets/images/email.png' />
                   </li>
                 </ul>
               </div>
