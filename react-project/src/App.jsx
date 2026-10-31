@@ -1,4 +1,3 @@
-import './App.css';
 import ColorModeSelector from './sections/ColorModeSelector';
 import Footer from './sections/Footer';
 import Header from './sections/Header';
