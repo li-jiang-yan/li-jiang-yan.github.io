@@ -21,7 +21,9 @@
         "noSvgWithoutTitle": "off",
         "noAmbiguousAnchorText": "off",
         "useValidAnchor": "off",
-        "useAltText": "off"
+        "useAltText": "off",
+        "useMediaCaption": "off",
+        "useIframeTitle": "off"
       }
     }
   },

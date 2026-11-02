@@ -1,5 +1,9 @@
 import { useState } from 'react';
+import Row from 'react-bootstrap/Row';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import projectData from '../assets/json/projects.json';
+import getCarousel from '../components/carousels/getCarousel';
+import Project from '../components/Project';
 
 function convertToId(skill) {
   return `toggle-${skill.toLowerCase().replaceAll(' ', '-')}`;
@@ -16,6 +20,7 @@ function Main() {
   const [toggles, setToggles] = useState(
     Object.fromEntries(skills.map((skill) => [skill, true])),
   );
+  const [viewed, setViewed] = useState('');
 
   return (
     <main>
@@ -58,7 +63,21 @@ function Main() {
       </section>
       <div className='album py-5 bg-body-tertiary'>
         <div className='container'>
-          <div id='projects'></div>
+          <Row id='projects' className='g-3'>
+            {projectData.map((projectObj) => {
+              const carouselObject = getCarousel(projectObj.title);
+              return (
+                <Project
+                  key={projectObj.title}
+                  object={projectObj}
+                  carousel={carouselObject.component}
+                  isValidCarousel={carouselObject.isValid}
+                  viewed={viewed}
+                  setViewed={setViewed}
+                ></Project>
+              );
+            })}
+          </Row>
         </div>
       </div>
     </main>

@@ -54,10 +54,10 @@
   flex: 1;
 }
 
-.carousel .carousel-control-prev,
-.carousel .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
   position: static; /* Remove absolute positioning */
-  width: 5%; /* Adjust width as needed */
+  width: 2rem; /* Adjust width as needed */
 }
 
 [data-bs-theme="light"] {
