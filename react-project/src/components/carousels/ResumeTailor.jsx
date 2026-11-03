@@ -1,4 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
+import { getAssetUrl } from '../../utils/assets';
 import CollapseCarousel from './CollapseCarousel';
 
 function ResumeTailor() {
@@ -11,7 +12,10 @@ function ResumeTailor() {
           description requirements?
         </p>
         <div className='ratio ratio-16x9'>
-          <video src='/src/assets/videos/resume-tailor.mp4' controls />
+          <video
+            src={getAssetUrl('/src/assets/videos/resume-tailor.mp4')}
+            controls
+          />
         </div>
       </Carousel.Item>
       <Carousel.Item>
@@ -21,7 +25,7 @@ function ResumeTailor() {
           job poster's core priorities.
         </p>
         <img
-          src='/src/assets/images/resume-tailor-01.png'
+          src={getAssetUrl('/src/assets/images/resume-tailor-01.png')}
           className='img-fluid'
         />
       </Carousel.Item>
@@ -33,7 +37,7 @@ function ResumeTailor() {
           requirements.
         </p>
         <img
-          src='/src/assets/images/resume-tailor-02.png'
+          src={getAssetUrl('/src/assets/images/resume-tailor-02.png')}
           className='img-fluid'
         />
       </Carousel.Item>
@@ -44,7 +48,7 @@ function ResumeTailor() {
           identity points to prioritize through inclusion/reorganization.
         </p>
         <img
-          src='/src/assets/images/resume-tailor-03.png'
+          src={getAssetUrl('/src/assets/images/resume-tailor-03.png')}
           className='img-fluid'
         />
       </Carousel.Item>
@@ -56,7 +60,7 @@ function ResumeTailor() {
           inclusion/reorganization.
         </p>
         <img
-          src='/src/assets/images/resume-tailor-04.png'
+          src={getAssetUrl('/src/assets/images/resume-tailor-04.png')}
           className='img-fluid'
         />
       </Carousel.Item>
@@ -67,7 +71,7 @@ function ResumeTailor() {
           the flexibility to make further edits in a Word processor if needed.
         </p>
         <img
-          src='/src/assets/images/resume-tailor-05.png'
+          src={getAssetUrl('/src/assets/images/resume-tailor-05.png')}
           className='img-fluid'
         />
       </Carousel.Item>

@@ -1,12 +1,21 @@
+import { getAssetUrl } from '../utils/assets';
+
 function Thumbnail({ src }) {
   if (src.startsWith('/src/assets/videos/')) {
     return (
-      <video src={src} className='object-fit-contain' height='225' autoPlay />
+      <video
+        src={getAssetUrl(src)}
+        className='object-fit-contain'
+        height='225'
+        autoPlay
+      />
     );
   }
 
   if (src.startsWith('/src/assets/images/')) {
-    return <img src={src} className='object-fit-contain' height='225' />;
+    return (
+      <img src={getAssetUrl(src)} className='object-fit-contain' height='225' />
+    );
   }
 
   return (
