@@ -67,3 +67,8 @@
 [data-bs-theme="dark"] {
   --bs-carousel-control-icon-filter: none;
 }
+
+canvas {
+  display: block;
+  max-width: 100%;
+}
