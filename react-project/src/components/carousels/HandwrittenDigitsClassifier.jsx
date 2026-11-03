@@ -6,12 +6,27 @@ import {
   PointElement,
   Tooltip,
 } from 'chart.js';
+import { useEffect, useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Scatter } from 'react-chartjs-2';
 import CollapseCarousel from './CollapseCarousel';
+
+const modelUrl = `${import.meta.env.BASE_URL}assets/projects/digits-classification_ann-tensorflow-keras/model.json`;
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let modelPromise;
+
+const loadModel = async () => {
+  if (!modelPromise) {
+    modelPromise = import('@tensorflow/tfjs').then((tf) =>
+      tf.loadLayersModel(modelUrl),
+    );
+  }
+
+  return modelPromise;
+};
 
 ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
 
@@ -93,6 +108,133 @@ export const data = {
 };
 
 function HandwrittenDigitsClassifier() {
+  const canvasRef = useRef(null);
+  const drawingRef = useRef(false);
+  const modelRef = useRef(null);
+  const [probabilities, setProbabilities] = useState(null);
+  const [prediction, setPrediction] = useState(null);
+  const [status, setStatus] = useState('Loading model…');
+
+  useEffect(() => {
+    let active = true;
+    loadModel()
+      .then((model) => {
+        modelRef.current = model;
+        if (active) setStatus('Draw a digit to get a prediction.');
+      })
+      .catch(() => {
+        if (active) setStatus('The classifier model could not be loaded.');
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const context = canvas?.getContext('2d');
+    if (context) {
+      context.fillStyle = 'black';
+      context.fillRect(0, 0, canvas.width, canvas.height);
+    }
+  }, []);
+
+  const resetDrawing = () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const context = canvas.getContext('2d');
+    context.fillStyle = 'black';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    setProbabilities(null);
+    setPrediction(null);
+    setStatus(
+      modelRef.current ? 'Draw a digit to get a prediction.' : 'Loading model…',
+    );
+  };
+
+  const getPoint = (event) => {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    return {
+      x:
+        (event.clientX - bounds.left) *
+        (event.currentTarget.width / bounds.width),
+      y:
+        (event.clientY - bounds.top) *
+        (event.currentTarget.height / bounds.height),
+    };
+  };
+
+  const startDrawing = (event) => {
+    if (event.button !== 0 && event.pointerType === 'mouse') return;
+    const canvas = event.currentTarget;
+    const point = getPoint(event);
+    drawingRef.current = true;
+    canvas.setPointerCapture(event.pointerId);
+    canvas.dataset.lastX = point.x;
+    canvas.dataset.lastY = point.y;
+  };
+
+  const draw = (event) => {
+    if (!drawingRef.current) return;
+    const canvas = event.currentTarget;
+    const context = canvas.getContext('2d');
+    const point = getPoint(event);
+    const scale = canvas.width / 8;
+    context.beginPath();
+    context.strokeStyle = 'white';
+    context.lineWidth = scale;
+    context.lineCap = 'round';
+    context.moveTo(Number(canvas.dataset.lastX), Number(canvas.dataset.lastY));
+    context.lineTo(point.x, point.y);
+    context.stroke();
+    canvas.dataset.lastX = point.x;
+    canvas.dataset.lastY = point.y;
+  };
+
+  const classify = async () => {
+    drawingRef.current = false;
+    const canvas = canvasRef.current;
+    const model = modelRef.current;
+    if (!canvas || !model) {
+      setStatus('The classifier model is still loading.');
+      return;
+    }
+
+    setStatus('Classifying…');
+    const miniCanvas = document.createElement('canvas');
+    miniCanvas.width = 8;
+    miniCanvas.height = 8;
+    const miniContext = miniCanvas.getContext('2d', {
+      willReadFrequently: true,
+    });
+    miniContext.imageSmoothingEnabled = true;
+    miniContext.drawImage(canvas, 0, 0, 8, 8);
+    const pixels = miniContext.getImageData(0, 0, 8, 8).data;
+    const input = [];
+    for (let i = 0; i < pixels.length; i += 4) {
+      input.push(
+        ((pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3) * (16 / 255),
+      );
+    }
+
+    const tf = await import('@tensorflow/tfjs');
+    const inputTensor = tf.tensor2d([input], [1, 64]);
+    const outputTensor = model.predict(inputTensor);
+    try {
+      const values = Array.from(await outputTensor.data());
+      const bestDigit = values.indexOf(Math.max(...values));
+      setProbabilities(values);
+      setPrediction(bestDigit);
+      setStatus('');
+    } catch {
+      setStatus('Classification failed. Please try drawing again.');
+    } finally {
+      inputTensor.dispose();
+      outputTensor.dispose();
+    }
+  };
+
   return (
     <CollapseCarousel>
       <Carousel.Item>
@@ -107,7 +249,31 @@ function HandwrittenDigitsClassifier() {
           <Col md={6} lg={6}>
             <h6>Drawing Board</h6>
             <p>Draw in the black box (yes, really!)</p>
-            <Button type='button' variant='secondary'>
+            <canvas
+              ref={canvasRef}
+              aria-label='Drawing canvas for handwritten digit classification'
+              width={280}
+              height={280}
+              style={{
+                width: '100%',
+                maxWidth: 280,
+                height: 'auto',
+                background: 'black',
+                touchAction: 'none',
+                border: '1px solid currentColor',
+                borderRadius: 4,
+              }}
+              onPointerDown={startDrawing}
+              onPointerMove={draw}
+              onPointerUp={classify}
+              onPointerCancel={classify}
+            />
+            <Button
+              className='mt-2'
+              type='button'
+              variant='secondary'
+              onClick={resetDrawing}
+            >
               Clear
             </Button>
           </Col>
@@ -121,21 +287,27 @@ function HandwrittenDigitsClassifier() {
                 </tr>
               </thead>
               <tbody>
-                {Array.from({ length: 10 }, (_, i) => {
-                  return (
-                    // biome-ignore lint/suspicious/noArrayIndexKey: these rows always represent the fixed digits 0 through 9
-                    <tr key={i}>
-                      <td>{i}</td>
-                      <td></td>
-                    </tr>
-                  );
-                })}
+                {digits.map((digit) => (
+                  <tr key={digit}>
+                    <td>{digit}</td>
+                    <td>
+                      {probabilities ? probabilities[digit].toFixed(3) : ''}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
             <Row className='justify-content-center'>
               <Col xs='auto'>Prediction:</Col>
-              <Col xs='auto'></Col>
+              <Col xs='auto'>{prediction ?? ''}</Col>
             </Row>
+            <p
+              className='small text-center mb-0'
+              role='status'
+              aria-live='polite'
+            >
+              {status}
+            </p>
             <p className='small text-center mb-0'>
               The model may make mistakes.
             </p>
