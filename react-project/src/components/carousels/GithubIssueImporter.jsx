@@ -1,4 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
+import { getAssetUrl } from '../../utils/assets';
 import CollapseCarousel from './CollapseCarousel';
 
 function GithubIssueImporter() {
@@ -11,7 +12,10 @@ function GithubIssueImporter() {
           repositories?
         </p>
         <div className='ratio ratio-16x9'>
-          <video src='/src/assets/videos/github-issue-importer.mp4' controls />
+          <video
+            src={getAssetUrl('/src/assets/videos/github-issue-importer.mp4')}
+            controls
+          />
         </div>
       </Carousel.Item>
     </CollapseCarousel>

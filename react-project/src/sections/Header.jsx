@@ -1,5 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import { getAssetUrl } from '../utils/assets';
 
 function Header() {
   return (
@@ -29,7 +30,8 @@ function Header() {
                     </a>
                   </li>
                   <li>
-                    Email me at <img src='/src/assets/images/email.png' />
+                    Email me at
+                    <img src={getAssetUrl('/src/assets/images/email.png')} />
                   </li>
                 </ul>
               </div>

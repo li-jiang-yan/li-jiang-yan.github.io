@@ -1,4 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
+import { getAssetUrl } from '../../utils/assets';
 import CollapseCarousel from './CollapseCarousel';
 
 function LinkedinWordTokenAnalyzer() {
@@ -11,7 +12,9 @@ function LinkedinWordTokenAnalyzer() {
           for a particular career/industry?
         </p>
         <img
-          src='/src/assets/images/linkedin-jd-word-token-analyzer_sklearn.png'
+          src={getAssetUrl(
+            '/src/assets/images/linkedin-jd-word-token-analyzer_sklearn.png',
+          )}
           className='img-fluid'
         />
       </Carousel.Item>

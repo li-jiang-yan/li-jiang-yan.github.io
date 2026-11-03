@@ -1,4 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
+import { getAssetUrl } from '../../utils/assets';
 import CollapseCarousel from './CollapseCarousel';
 
 function LinkedinJobFinder() {
@@ -12,7 +13,9 @@ function LinkedinJobFinder() {
         </p>
         <div className='ratio ratio-16x9'>
           <video
-            src='/src/assets/videos/advanced-linkedin-job-search-engine.mp4'
+            src={getAssetUrl(
+              '/src/assets/videos/advanced-linkedin-job-search-engine.mp4',
+            )}
             controls
           />
         </div>
