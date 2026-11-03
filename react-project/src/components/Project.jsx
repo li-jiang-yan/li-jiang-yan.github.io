@@ -16,9 +16,7 @@ function Project({ object, carousel, isValidCarousel, viewed, setViewed }) {
           <Thumbnail src={object.thumbnail} />
           <Card.Body>
             <Card.Title>{object.title}</Card.Title>
-            <Card.Text>
-              {object.text} {JSON.stringify(isValidCarousel)}{' '}
-            </Card.Text>
+            <Card.Text>{object.text}</Card.Text>
             <div className='d-flex justify-content-between align-items-center'>
               <ButtonGroup>
                 <View
