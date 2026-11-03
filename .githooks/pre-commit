@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+{
+    cd react-project
+    npx --no-install biome check
+}
