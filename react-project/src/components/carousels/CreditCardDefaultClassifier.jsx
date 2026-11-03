@@ -1,9 +1,11 @@
 import {
+  BarController,
   BarElement,
   CategoryScale,
   Chart as ChartJS,
   Legend,
   LinearScale,
+  LineController,
   LineElement,
   PointElement,
   Tooltip,
@@ -17,9 +19,11 @@ import { Chart } from 'react-chartjs-2';
 import CollapseCarousel from './CollapseCarousel';
 
 ChartJS.register(
+  BarController,
   BarElement,
   CategoryScale,
   Legend,
+  LineController,
   LineElement,
   LinearScale,
   PointElement,
