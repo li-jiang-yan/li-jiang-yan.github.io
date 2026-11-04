@@ -13,7 +13,9 @@ function Main() {
   const skills = [
     'Python',
     'JavaScript',
+    'React',
     'Flask',
+    'OpenAI API',
     'scikit-learn',
     'TensorFlow and Keras',
   ];
@@ -65,6 +67,14 @@ function Main() {
         <div className='container'>
           <Row id='projects' className='g-3'>
             {projectData.map((projectObj) => {
+              const projectSkills = projectObj.skills;
+              const toggledSkills = projectSkills.filter(
+                (projectSkill) => toggles[projectSkill],
+              );
+              if (!(toggledSkills.length > 0)) {
+                return null;
+              }
+
               const carouselObject = getCarousel(projectObj.title);
               return (
                 <Project
