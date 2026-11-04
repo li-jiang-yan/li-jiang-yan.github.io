@@ -2,6 +2,7 @@ import { isValidElement } from 'react';
 import CreditCardDefaultClassifier from './CreditCardDefaultClassifier';
 import GithubIssueImporter from './GithubIssueImporter';
 import HandwrittenDigitsClassifier from './HandwrittenDigitsClassifier';
+import IntelligentJobSearchTool from './IntelligentJobSearchTool';
 import LinkedinJobFinder from './LinkedinJobFinder';
 import LinkedinWordTokenAnalyzer from './LinkedinWordTokenAnalyzer';
 import ResumeTailor from './ResumeTailor';
@@ -16,6 +17,10 @@ const carousels = [
     title: 'Handwritten Digit Optical Recognition',
     carousel: <HandwrittenDigitsClassifier />,
   },
+  {
+    title: 'Intelligent Job Search Tool',
+    carousel: <IntelligentJobSearchTool />,
+  },
   { title: 'LinkedIn Job Finder', carousel: <LinkedinJobFinder /> },
   {
     title: 'LinkedIn Job Description Word Token Analyzer',
@@ -27,7 +32,7 @@ const carousels = [
 function getCarousel(projectTitle) {
   const result = carousels.find(
     (carousel) => carousel.title === projectTitle,
-  ).carousel;
+  )?.carousel;
 
   if (result !== undefined)
     return { component: result, isValid: isValidElement(result) };

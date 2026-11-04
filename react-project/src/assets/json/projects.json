@@ -1,5 +1,12 @@
 [
   {
+    "thumbnail": "/src/assets/videos/ai-job-search-solution.mp4",
+    "title": "Intelligent Job Search Tool",
+    "link": "https://github.com/li-jiang-yan/ai-job-search-solution",
+    "text": "An LLM/RAG-powered web app for job applicants to find jobs and tailor their resumes accordingly",
+    "skills": ["Python", "JavaScript", "React", "Flask", "OpenAI API"]
+  },
+  {
     "thumbnail": "/src/assets/videos/github-issue-importer.mp4",
     "title": "GitHub Issue Importer",
     "link": "https://github.com/li-jiang-yan/github-issue-importer",

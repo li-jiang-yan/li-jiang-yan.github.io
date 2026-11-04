@@ -13,7 +13,9 @@ function Main() {
   const skills = [
     'Python',
     'JavaScript',
+    'React',
     'Flask',
+    'OpenAI API',
     'scikit-learn',
     'TensorFlow and Keras',
   ];
