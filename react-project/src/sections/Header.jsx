@@ -30,7 +30,7 @@ function Header() {
                     </a>
                   </li>
                   <li>
-                    Email me at
+                    Email me at&nbsp;
                     <img src={getAssetUrl('/src/assets/images/email.png')} />
                   </li>
                 </ul>
