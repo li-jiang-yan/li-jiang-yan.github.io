@@ -1,5 +1,12 @@
 [
   {
+    "thumbnail": "/src/assets/videos/ml-image-sorter.mp4",
+    "title": "Image Sorter",
+    "link": "https://github.com/li-jiang-yan/ml-image-sorter",
+    "text": "A powerful AI app for users to sort images in a given directory",
+    "skills": ["Python", "scikit-learn", "OpenCV"]
+  },
+  {
     "thumbnail": "/src/assets/videos/ai-job-search-solution.mp4",
     "title": "Intelligent Job Search Tool",
     "link": "https://github.com/li-jiang-yan/ai-job-search-solution",
