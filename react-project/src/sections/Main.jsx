@@ -18,6 +18,7 @@ function Main() {
     'OpenAI API',
     'scikit-learn',
     'TensorFlow and Keras',
+    'OpenCV',
   ];
   const [toggles, setToggles] = useState(
     Object.fromEntries(skills.map((skill) => [skill, true])),

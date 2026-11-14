@@ -2,6 +2,7 @@ import { isValidElement } from 'react';
 import CreditCardDefaultClassifier from './CreditCardDefaultClassifier';
 import GithubIssueImporter from './GithubIssueImporter';
 import HandwrittenDigitsClassifier from './HandwrittenDigitsClassifier';
+import ImageSorter from './ImageSorter';
 import IntelligentJobSearchTool from './IntelligentJobSearchTool';
 import LinkedinJobFinder from './LinkedinJobFinder';
 import LinkedinWordTokenAnalyzer from './LinkedinWordTokenAnalyzer';
@@ -16,6 +17,10 @@ const carousels = [
   {
     title: 'Handwritten Digit Optical Recognition',
     carousel: <HandwrittenDigitsClassifier />,
+  },
+  {
+    title: 'Image Sorter',
+    carousel: <ImageSorter />,
   },
   {
     title: 'Intelligent Job Search Tool',
